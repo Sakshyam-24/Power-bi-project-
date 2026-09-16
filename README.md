@@ -20,7 +20,20 @@ documentation, and Power BI Desktop files (`.pbix`).
 
 ## Projects
 
-### 1. Sales & Revenue Dashboard — `Sales-Revenue-Dashboard/`
+### 1. Coffee Sales Dashboard — `Coffee-Sales-Dashboard/`
+
+A professional single-page coffee shop dashboard: KPI cards (Total Amount ~$115K,
+Total Coffees Sold 3,636), horizontal bar chart (coffee sold by type), donut
+chart (Cash vs Card payment split ~97.5% / ~2.5%), and a monthly revenue area
+chart (March 2024 – March 2025). Includes 25+ ready-to-use **DAX measures**
+(KPIs, time intelligence, payment analysis, coffee rankings).
+
+> **Metrics**: Total Revenue, Total Coffees Sold, AOV, Revenue vs PY, Cash %,
+> Top Coffee by Revenue, Espresso Based %, and more.
+
+See [`Coffee-Sales-Dashboard/README.md`](Coffee-Sales-Dashboard/README.md).
+
+### 2. Sales & Revenue Dashboard — `Sales-Revenue-Dashboard/`
 
 A professional, ready-to-build executive sales report. Includes a clean sample
 dataset (2,200 orders across 2024–2025), 20 production-ready **DAX measures**
@@ -33,7 +46,7 @@ Product & Customer Insights).
 
 See [`Sales-Revenue-Dashboard/README.md`](Sales-Revenue-Dashboard/README.md).
 
-### 2. US Candy Distributor — `US+Candy+Distributor/`
+### 3. US Candy Distributor — `US+Candy+Distributor/`
 
 An end-to-end analytics project built on the Maven Analytics **Candy
 Distributor** challenge dataset:
@@ -46,7 +59,7 @@ Distributor** challenge dataset:
 
 Each data field is documented in `candy_distributor_data_dictionary.csv`.
 
-### 3. Power Bi Day 3 — `Power Bi Day 3.pbix`
+### 4. Power Bi Day 3 — `Power Bi Day 3.pbix`
 
 Practice report built during a Power BI workshop — an easy entry point for
 seeing standard visuals, filters, and basic DAX applied to sample data.

@@ -1,0 +1,9 @@
+CoffeeID,CoffeeName,Category,UnitPrice,Description
+COF-001,Latte,Espresso Based,5.50,Smooth espresso with steamed milk and a light layer of foam
+COF-002,Americano with Milk,Espresso Based,5.00,Bold espresso diluted with hot water, topped with a splash of milk
+COF-003,Cappuccino,Espresso Based,5.75,Equal parts espresso, steamed milk, and thick foam
+COF-004,Americano,Espresso Based,4.50,Classic espresso diluted with hot water for a clean bold taste
+COF-005,Hot Chocolate,Non-Espresso,6.00,Rich Belgian chocolate blended with steamed milk and whipped cream
+COF-006,Cocoa,Non-Espresso,6.25,Premium cocoa powder whisked into hot milk with a hint of vanilla
+COF-007,Cortado,Espresso Based,5.25,Equal parts espresso and warm milk for a balanced, bold flavour
+COF-008,Espresso,Espresso Based,3.50,Pure single or double shot of freshly pulled espresso

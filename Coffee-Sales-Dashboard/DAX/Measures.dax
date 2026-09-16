@@ -1,0 +1,113 @@
+// ============================================================================
+//  Coffee Sales Dashboard — DAX Measures
+//  Import coffee_sales.csv into a "Sales" table, coffee_products into
+//  "Products", then paste these measures into the Sales table.
+// ============================================================================
+
+// ---- Core KPIs ---------------------------------------------------------------
+
+Total Revenue =
+    SUM ( 'Sales'[TotalAmount] )
+
+Total Coffees Sold =
+    SUM ( 'Sales'[Quantity] )
+
+Total Transactions =
+    DISTINCTCOUNT ( 'Sales'[OrderID] )
+
+Average Order Value =
+    DIVIDE ( [Total Revenue], [Total Transactions], 0 )
+
+Average Price Per Coffee =
+    DIVIDE ( [Total Revenue], [Total Coffees Sold], 0 )
+
+// ---- By Coffee Type ----------------------------------------------------------
+
+Revenue by Coffee =
+    SUMX ( VALUES ( 'Products'[CoffeeName] ), [Total Revenue] )
+
+Top Coffee by Revenue =
+    VAR TopOne =
+        TOPN ( 1, ALL ( 'Products'[CoffeeName] ), [Total Revenue], DESC )
+    RETURN
+        MINX ( TopOne, 'Products'[CoffeeName] )
+
+Coffee Rank =
+    RANKX ( ALL ( 'Products'[CoffeeName] ), [Total Revenue], , DESC, DENSE )
+
+% of Total Revenue =
+    DIVIDE ( [Total Revenue], CALCULATE ( [Total Revenue], ALL ( 'Sales' ) ), 0 )
+
+// ---- Payment Analysis --------------------------------------------------------
+
+Cash Transactions =
+    CALCULATE ( [Total Transactions], 'Sales'[PaymentMethod] = "Cash" )
+
+Card Transactions =
+    CALCULATE ( [Total Transactions], 'Sales'[PaymentMethod] = "Card" )
+
+Cash Revenue =
+    CALCULATE ( [Total Revenue], 'Sales'[PaymentMethod] = "Cash" )
+
+Card Revenue =
+    CALCULATE ( [Total Revenue], 'Sales'[PaymentMethod] = "Card" )
+
+Cash % of Transactions =
+    DIVIDE ( [Cash Transactions], [Total Transactions], 0 )
+
+Card % of Transactions =
+    DIVIDE ( [Card Transactions], [Total Transactions], 0 )
+
+Cash % of Revenue =
+    DIVIDE ( [Cash Revenue], [Total Revenue], 0 )
+
+// ---- Time Intelligence -------------------------------------------------------
+
+Revenue MTD =
+    TOTALMTD ( [Total Revenue], 'DateTable'[Date] )
+
+Revenue QTD =
+    TOTALQTD ( [Total Revenue], 'DateTable'[Date] )
+
+Revenue YTD =
+    TOTALYTD ( [Total Revenue], 'DateTable'[Date] )
+
+Revenue PY =
+    CALCULATE (
+        [Total Revenue],
+        SAMEPERIODLASTYEAR ( 'DateTable'[Date] )
+    )
+
+Revenue vs PY % =
+    DIVIDE ( [Total Revenue] - [Revenue PY], [Revenue PY], 0 )
+
+Revenue PY MTD =
+    CALCULATE (
+        [Revenue MTD],
+        SAMEPERIODLASTYEAR ( 'DateTable'[Date] )
+    )
+
+// ---- Monthly / Period --------------------------------------------------------
+
+Monthly Revenue =
+    TOTALMTD ( [Total Revenue], 'DateTable'[Date] )
+
+Coffees Sold PY =
+    CALCULATE (
+        [Total Coffees Sold],
+        SAMEPERIODLASTYEAR ( 'DateTable'[Date] )
+    )
+
+Coffees Sold vs PY % =
+    DIVIDE ( [Total Coffees Sold] - [Coffees Sold PY], [Coffees Sold PY], 0 )
+
+// ---- Category Split ----------------------------------------------------------
+
+Espresso Based Revenue =
+    CALCULATE ( [Total Revenue], 'Products'[Category] = "Espresso Based" )
+
+Non Espresso Revenue =
+    CALCULATE ( [Total Revenue], 'Products'[Category] = "Non-Espresso" )
+
+Espresso Based % =
+    DIVIDE ( [Espresso Based Revenue], [Total Revenue], 0 )
