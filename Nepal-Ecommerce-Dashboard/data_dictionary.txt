@@ -1,0 +1,66 @@
+Nepal E-Commerce Data Dictionary
+=================================
+
+Dataset: Sales.csv
+Records: 1,200 transactions
+Date Range: January 2024 - December 2024
+
+Column Definitions:
+-------------------
+
+OrderID (Integer)
+    Unique identifier for each transaction
+    Range: 1000 - 2199
+
+Date (Date)
+    Transaction date
+    Format: YYYY-MM-DD
+    Range: 2024-01-01 to 2024-12-31
+
+City (String)
+    Customer location
+    Values: Kathmandu, Pokhara, Lalitpur, Bhaktapur, Biratnagar, Chitwan
+
+Category (String)
+    Product category
+    Values: Electronics, Clothing, Groceries, Home & Kitchen, Beauty, Books
+
+Price (Decimal)
+    Unit price in Nepalese Rupees (NPR)
+    Range: 100 - 20,000
+
+Quantity (Integer)
+    Number of items ordered
+    Range: 1 - 5
+
+CustomerAge (Integer)
+    Age of customer
+    Range: 16 - 70
+
+PaymentMethod (String)
+    Payment type used
+    Values: eSewa, Khalti, Cash on Delivery, Bank Transfer
+
+Rating (Decimal)
+    Customer satisfaction rating
+    Range: 1.0 - 5.0
+
+TotalAmount (Decimal)
+    Calculated: Price × Quantity
+    Represents total order value in NPR
+
+Month (String)
+    Extracted from Date
+    Values: January - December
+
+Weekday (String)
+    Extracted from Date
+    Values: Monday - Sunday
+
+AgeGroup (String)
+    Customer age segment
+    Values: 16-24, 25-34, 35-44, 45-54, 55-70
+
+RevenueSegment (String)
+    Order value tier
+    Values: Budget (<2,000), Standard (2,000-5,000), Premium (5,000-10,000), Enterprise (>10,000)

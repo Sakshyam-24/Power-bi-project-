@@ -20,7 +20,15 @@ documentation, and Power BI Desktop files (`.pbix`).
 
 ## Projects
 
-### 1. Coffee Sales Dashboard — `Coffee-Sales-Dashboard/`
+### 1. Nepal E-Commerce Dashboard — `Nepal-Ecommerce-Dashboard/`
+
+A professional executive dashboard analyzing **1,200+ e-commerce transactions** across Nepal. Features KPI cards, revenue trends, geographic analysis, category performance, payment distribution, and customer segmentation.
+
+> **Metrics**: Total Revenue, Total Orders, Avg Order Value, Customer Rating, City Performance, Category Analysis, Payment Trends.
+
+See [`Nepal-Ecommerce-Dashboard/README.md`](Nepal-Ecommerce-Dashboard/README.md).
+
+### 2. Coffee Sales Dashboard — `Coffee-Sales-Dashboard/`
 
 A professional single-page coffee shop dashboard: KPI cards (Total Amount ~$115K,
 Total Coffees Sold 3,636), horizontal bar chart (coffee sold by type), donut
@@ -33,7 +41,7 @@ chart (March 2024 – March 2025). Includes 25+ ready-to-use **DAX measures**
 
 See [`Coffee-Sales-Dashboard/README.md`](Coffee-Sales-Dashboard/README.md).
 
-### 2. Sales & Revenue Dashboard — `Sales-Revenue-Dashboard/`
+### 3. Sales & Revenue Dashboard — `Sales-Revenue-Dashboard/`
 
 A professional, ready-to-build executive sales report. Includes a clean sample
 dataset (2,200 orders across 2024–2025), 20 production-ready **DAX measures**
@@ -46,7 +54,7 @@ Product & Customer Insights).
 
 See [`Sales-Revenue-Dashboard/README.md`](Sales-Revenue-Dashboard/README.md).
 
-### 3. US Candy Distributor — `US+Candy+Distributor/`
+### 4. US Candy Distributor — `US+Candy+Distributor/`
 
 An end-to-end analytics project built on the Maven Analytics **Candy
 Distributor** challenge dataset:
@@ -59,7 +67,7 @@ Distributor** challenge dataset:
 
 Each data field is documented in `candy_distributor_data_dictionary.csv`.
 
-### 4. Power Bi Day 3 — `Power Bi Day 3.pbix`
+### 5. Power Bi Day 3 — `Power Bi Day 3.pbix`
 
 Practice report built during a Power BI workshop — an easy entry point for
 seeing standard visuals, filters, and basic DAX applied to sample data.
