@@ -1,0 +1,133 @@
+// ============================================================================
+//  Sales & Revenue Dashboard — DAX Measures
+//  Power BI Desktop .dax reference file
+//  Create these measures in the "Sales Orders" table (or a Measures table).
+// ============================================================================
+
+// ---- Core KPIs -------------------------------------------------------------
+
+Total Sales =
+    SUM ( 'Sales Orders'[SalesAmount] )
+
+Total Profit =
+    SUM ( 'Sales Orders'[Profit] )
+
+Total Quantity =
+    SUM ( 'Sales Orders'[Quantity] )
+
+Total Discount Amount =
+    SUMX (
+        'Sales Orders',
+        'Sales Orders'[UnitPrice] * 'Sales Orders'[Quantity] * 'Sales Orders'[Discount]
+    )
+
+Number of Orders =
+    DISTINCTCOUNT ( 'Sales Orders'[OrderID] )
+
+Number of Customers =
+    DISTINCTCOUNT ( 'Sales Orders'[CustomerID] )
+
+// ---- Profitability & Rate ------------------------------------------------------------------
+
+Profit Margin =
+    DIVIDE ( [Total Profit], [Total Sales], 0 )
+
+Average Order Value =
+    DIVIDE ( [Total Sales], [Number of Orders], 0 )
+
+Average Discount Rate =
+    DIVIDE ( [Total Discount Amount], [Total Sales], 0 )
+
+// ---- Time intelligence ------------------------------------------------------------------
+
+Sales PY =
+    CALCULATE (
+        [Total Sales],
+        SAMEPERIODLASTYEAR ( 'Date'[Date] )
+    )
+
+Sales vs PY =
+    [Total Sales] - [Sales PY]
+
+Sales vs PY % =
+    DIVIDE ( [Sales vs PY], [Sales PY], 0 )
+
+Profit PY =
+    CALCULATE (
+        [Total Profit],
+        SAMEPERIODLASTYEAR ( 'Date'[Date] )
+    )
+
+Profit vs PY % =
+    DIVIDE ( [Total Profit] - [Profit PY], [Profit PY], 0 )
+
+Sales MTD =
+    TOTALMTD ( [Total Sales], 'Date'[Date] )
+
+Sales QTD =
+    TOTALQTD ( [Total Sales], 'Date'[Date] )
+
+Sales YTD =
+    TOTALYTD ( [Total Sales], 'Date'[Date] )
+
+Sales YTD LY =
+    CALCULATE (
+        [Sales YTD],
+        SAMEPERIODLASTYEAR ( 'Date'[Date] )
+    )
+
+// ---- Target analysis (uses Targets table) --------------------------------------------------
+
+Sales vs Target =
+    [Total Sales] - [Target Amount]
+
+Target Achievement % =
+    DIVIDE ( [Total Sales], [Target Amount], 0 )
+
+// ---- Rankings ------------------------------------------------------------------
+
+Product Rank by Sales =
+    RANKX ( ALL ( 'Products'[ProductName] ), [Total Sales], , DESC, DENSE )
+
+Top N Products =
+    VAR N = 5
+    RETURN
+        CALCULATE (
+            [Total Sales],
+            KEEPFILTERS ( TOPN ( N, ALL ( 'Products'[ProductName] ), [Total Sales] ) )
+        )
+
+High Margin Products =
+    CALCULATE (
+        [Total Sales],
+        FILTER ( 'Products', [Profit Margin] > 0.40 )
+    )
+
+// ---- Customer analysis ------------------------------------------------------------------
+
+Customers with Profit < 0 =
+    CALCULATE (
+        DISTINCTCOUNT ( 'Sales Orders'[CustomerID] ),
+        FILTER ( VALUES ( 'Sales Orders'[CustomerID] ), [Total Profit] < 0 )
+    )
+
+Repeat Customer Share =
+    VAR TotalCust = [Number of Customers]
+    VAR RepeatCust =
+        COUNTROWS (
+            FILTER (
+                ADDCOLUMNS (
+                    VALUES ( 'Sales Orders'[CustomerID] ),
+                    "OrderCount", CALCULATE ( [Number of Orders] )
+                ),
+                [OrderCount] > 1
+            )
+        )
+    RETURN
+        DIVIDE ( RepeatCust, TotalCust, 0 )
+
+// ---- Notes -----------------------------------------------------------------------------------
+// 1. 'Sales Orders' table should have a relationship to 'Products' on ProductID,
+//    'Customers' on CustomerID, 'Regions' on Region, and 'Targets' on
+//    (Year, Region). Create/expand a Date table ('Date') marked as the date table.
+// 2. Format currencies with $ and thousands separators; percentages to two decimals.

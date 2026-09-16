@@ -1,0 +1,21 @@
+ProductID,ProductName,Category,SubCategory,UnitPrice,UnitCost
+P-001,NovaBook Pro 14 (2025),Technology,Computers,1299.00,760.00
+P-002,NexusBook Air 13,Technology,Computers,999.00,610.00
+P-003,VoltCharge Smartphone X,Technology,Phones & Tablets,849.00,540.00
+P-004,PulseTablet Mini,Technology,Phones & Tablets,499.00,310.00
+P-005,BeamView 4K Monitor 27",Technology,Accessories & Peripherals,329.00,195.00
+P-006,ClickPro Wireless Mouse,Technology,Accessories & Peripherals,49.99,21.00
+P-007,KeyTact Mechanical Keyboard,Technology,Accessories & Peripherals,119.00,64.00
+P-008,SonicBuds TWS Earbuds,Technology,Audio,89.99,38.00
+P-009,StudioHead ANC Headphones,Technology,Audio,199.00,96.00
+P-010,OfficeMaster Ergonomic Chair,Furniture,Chairs,429.00,240.00
+P-011,DeskPro Standing Desk,Furniture,Tables & Desks,559.00,330.00
+P-012,StorageVault Bookcase,Furniture,Bookcases,249.00,140.00
+P-013,Twinline Filing Cabinet,Furniture,Storage,179.00,95.00
+P-014,BrightLight LED Desk Lamp,Furniture,Lamps,59.00,28.00
+P-015,PurePrint Laser Printer,Office Supplies,Printers & Supplies,289.00,165.00
+P-016,EcoWrite A4 Paper (Ream),Office Supplies,Paper,6.99,3.20
+P-017,ColorMarker Dry-Erase Markers,Office Supplies,Writing Supplies,12.49,5.10
+P-018,SmartBoard Premium Notebooks,Office Supplies,Writing Supplies,8.99,3.60
+P-019,CargoPad Binders (100 pack),Office Supplies,Binders,68.00,34.00
+P-020,SteelCut Stapler,Office Supplies,Office Equipment,34.99,14.00

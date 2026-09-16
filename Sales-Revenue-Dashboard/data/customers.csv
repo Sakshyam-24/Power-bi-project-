@@ -1,0 +1,41 @@
+CustomerID,CustomerName,Segment,Country,City,State
+C-001,Acme Corp,Corporate,United States,New York,NY
+C-002,Globex Trading,Corporate,United States,Los Angeles,CA
+C-003,Initech Solutions,Corporate,United States,Chicago,IL
+C-004,Umbrella Holdings,Corporate,United States,Houston,TX
+C-005,Soylent Industries,Corporate,United States,Phoenix,AZ
+C-006,Stark Enterprises,Corporate,United States,Seattle,WA
+C-007,Wayne Logistics,Corporate,United States,Atlanta,GA
+C-008,Hammer Manufacturing,Corporate,United States,Detroit,MI
+C-009,Paxton Apparel,Corporate,United States,Boston,MA
+C-010,Joyful Catering,Corporate,United States,Denver,CO
+C-011,Grand School District,Education,United States,Dallas,TX
+C-012,Riverwood University,Education,United States,Miami,FL
+C-013,Maple Leaf Academy,Education,Canada,Toronto,ON
+C-014,Summit Prep High School,Education,United States,San Diego,CA
+C-015,Horizon Community College,Education,United States,Portland,OR
+C-016,City General Hospital,Healthcare,United States,Cleveland,OH
+C-017,St. Mary Medical Center,Healthcare,United States,Memphis,TN
+C-018,MedLife Clinics,Healthcare,United States,Raleigh,NC
+C-019,WellCare Diagnostics,Healthcare,United States,Las Vegas,NV
+C-020,Pinnacle Health Group,Healthcare,United States,Kansas City,MO
+C-021,GreenLeaf Boutique,Consumer,United States,Orlando,FL
+C-022,BlueSky Home Store,Consumer,United States,Salt Lake City,UT
+C-023,Sunset Cafe,Consumer,United States,Tampa,FL
+C-024,Pinewood Retail,Consumer,United States,Charlotte,NC
+C-025,Riverside Books,Consumer,United States,Nashville,TN
+C-026,John Carter,Consumer,United States,Indianapolis,IN
+C-027,Sarah Miller,Home Office,United States,Columbus,OH
+C-028,Michael Brown,Consumer,United States,Milwaukee,WI
+C-029,Emily Davis,Home Office,United States,Austin,TX
+C-030,David Wilson,Consumer,United States,Baltimore,MD
+C-031,Ashley Thomas,Consumer,Canada,Vancouver,BC
+C-032,James Rodriguez,Home Office,Canada,Calgary,AB
+C-033,Linda Nguyen,Consumer,United States,San Antonio,TX
+C-034,Robert Garcia,Home Office,United States,Sacramento,CA
+C-035,Karen Lee,Consumer,United States,St. Louis,MO
+C-036,Daniel Martinez,Consumer,United States,Pittsburgh,PA
+C-037,Patricia Anderson,Home Office,United States,Cincinnati,OH
+C-038,Charles Taylor,Consumer,United States,New Orleans,LA
+C-039,Jennifer White,Home Office,United States,Oklahoma City,OK
+C-040,Laura Harris,Consumer,United States,Louisville,KY
